@@ -1,12 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter } from 'react-router-dom';
 
-function App() {
+import NavbarTop from './Components/Navbar';
+
+const App = () => {
   return (
-    <div className="App">
-      
-    </div>
+    <BrowserRouter>
+      <div className="container-fluid  p-0">
+        <NavbarTop />
+        
+      </div>
+    </BrowserRouter>
   );
 }
 
