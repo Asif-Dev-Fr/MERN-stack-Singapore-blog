@@ -1,7 +1,7 @@
+import data from './data';
+
 const express = require('express');
 const app = express();
-
-import data from './data';
 
 const PORT = 5000;
 
@@ -10,9 +10,15 @@ app.listen(PORT, () => {
 });
 
 
+app.get("/api/nos-articles", (req, res) => {
+    const allArticles = data.articles;
+    console.log(allArticles);
+    res.send(allArticles);
+});
+
 app.get("/nos-articles/:cat", (req, res) => {
     const articleCat = req.params.category;
-    const article = data.articles.find(value => value.cat === articleCat);
+    const article = data.articles.find(value => value.category === articleCat);
     if(article) {
         res.send(article);
     } else {
