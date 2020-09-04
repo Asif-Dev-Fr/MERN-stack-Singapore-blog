@@ -16,7 +16,7 @@ const NavbarTop = () => {
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto text-center">
                     <Link className="nav-link" to="/"><i className="fas fa-home"></i> Accueil </Link>
-                    <Nav.Link href="./Screens/Histoire.js">Histoire</Nav.Link>
+                    <Nav.Link href="./">Histoire</Nav.Link>
                     <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                         <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
