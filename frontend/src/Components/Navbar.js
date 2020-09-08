@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Navbar, NavDropdown, Nav } from 'react-bootstrap';
 
+import { useSelector, useDispatch } from 'react-redux';
+import { listArticles } from '../Action/articleActions';
+
+
 const NavbarTop = () => {
-    
-        
+    const articleList = useSelector(state => state.articleList);
+    const { articles, loading, error } = articleList;
+    const dispatch = useDispatch();
+
+    // Retrieve data :
+    useEffect(() => {
+       dispatch(listArticles());
+    },[dispatch]);    
 
     return (
         <Navbar bg="dark" variant="dark" expand="lg">
@@ -17,12 +27,14 @@ const NavbarTop = () => {
                 <Nav className="mr-auto text-center navbar-color">
                     <Link className="nav-link navbar-color" to="/"><i className="fas fa-home"></i> Accueil </Link>
                     <Nav.Link className="navbar-color" href="./">Histoire</Nav.Link>
-                    <NavDropdown title="Articles" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                    <NavDropdown title="Nos articles" id="basic-nav-dropdown">
+                        {
+                            loading ? <div>Loading...</div> :
+                            error ? <div>{error}</div> :
+                            articles.map(name => 
+                                <NavDropdown.Item href={name.category}>{name.category}</NavDropdown.Item>
+                            )
+                        }                        
                     </NavDropdown>
                     <Nav.Link className="navbar-color" href="./">Contact</Nav.Link>
                 </Nav>

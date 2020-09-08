@@ -27,6 +27,11 @@ const HomeScreen = () => {
         error ? <div>{error}</div> :
         <div>
             <h1>HomeScreen Component</h1>
+            {
+                articles.map(value => 
+                    <h2>{value.name}</h2>
+                )
+            }
         </div>
     )
 }
