@@ -10,9 +10,10 @@ app.listen(PORT, () => {
 });
 
 
+
 app.get("/api/nos-articles", (req, res) => {
     const allArticles = data.articles;
-    console.log(allArticles);
+    // console.log(allArticles);
     res.send(allArticles);
 });
 
