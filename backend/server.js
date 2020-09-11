@@ -2,6 +2,14 @@ import data from './data';
 
 const express = require('express');
 const app = express();
+require('dotenv').config()
+
+// Connection DB : 
+const mongoose = require('mongoose');
+const url = process.env.MONGO_DB_URL;
+mongoose.connect(url, {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true}, () => console.log('Connected to DB'));
+
+
 
 const PORT = 5000;
 
