@@ -4,18 +4,20 @@ const express = require('express');
 const app = express();
 require('dotenv').config();
 
-// const articleRoute = require('./routes/articles');
+// Import Routes : 
+// const router = require('./routes/articles');
+const articleRoute = require('./routes/articles');
 
 // Connection DB : 
 const mongoose = require('mongoose');
 const url = process.env.MONGO_DB_URL;
 mongoose.connect(url, {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true}, () => console.log('Connected to DB'));
 
-/*
+
 // Middleware :
 app.use(express.json());
 // Route Middlewars : 
-app.use('/admin/articles/add', articleRoute); */
+app.use('/admin/articles', articleRoute); 
 
 const PORT = 5000;
 
