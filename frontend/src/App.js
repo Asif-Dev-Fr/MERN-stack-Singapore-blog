@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import NavbarTop from './Components/Navbar';
 import HomeScreen from './Screens/HomeScreen';
+import ArticlesForm from './forms/articlesForm';
 
 const App = () => {
 
@@ -24,6 +25,7 @@ const App = () => {
       <div className="container-fluid  p-0">
         <NavbarTop />
         <HomeScreen />
+        <ArticlesForm />
         
       </div>
     </BrowserRouter>

@@ -36,7 +36,7 @@ const NavbarTop = () => {
                             )
                         }                        
                     </NavDropdown>
-                    <Nav.Link className="navbar-color" href="./">Contact</Nav.Link>
+                    <Nav.Link className="navbar-color" href="/contact">Contact</Nav.Link>
                 </Nav>
                 
             </Navbar.Collapse>
