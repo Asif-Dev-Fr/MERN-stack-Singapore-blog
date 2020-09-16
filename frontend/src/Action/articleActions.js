@@ -10,6 +10,6 @@ const listArticles = () => async (dispatch) => {
     } catch(error) {
         dispatch({type: ARTICLE_LIST_FAIL, payload: error.message});
     }
-}
+} 
 
 export { listArticles };

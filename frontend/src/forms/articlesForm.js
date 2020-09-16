@@ -16,7 +16,7 @@ const ArticlesForm = () => {
         const addTitle = e.target.value;
         console.log(e.target);
     }
-
+ 
     return(
         <div>
             <div className="row">
