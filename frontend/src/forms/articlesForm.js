@@ -14,7 +14,7 @@ const ArticlesForm = () => {
 
     const addArticle = async (e) => {
         const addTitle = e.target.value;
-        console.log(e.target);
+        console.log(e.target); 
     }
  
     return(
