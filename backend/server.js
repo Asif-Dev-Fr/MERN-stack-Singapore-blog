@@ -33,7 +33,7 @@ app.get("/api/nos-articles", (req, res) => {
     res.send(allArticles);
 });
 
-app.get("/nos-articles/:cat", (req, res) => {
+app.get("/nos-articles/:category", (req, res) => {
     const articleCat = req.params.category;
     const article = data.articles.find(value => value.category === articleCat);
     if(article) {

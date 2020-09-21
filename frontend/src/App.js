@@ -5,6 +5,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import NavbarTop from './Components/Navbar';
 import HomeScreen from './Screens/HomeScreen';
 import ArticlesForm from './forms/articlesForm';
+import ArticlesScreeen from './Screens/ArticlesScreen';
 
 const App = () => {
 
@@ -25,7 +26,7 @@ const App = () => {
       <div className="container-fluid  p-0">
         <NavbarTop />
         <Route path='/' exact={true} component={HomeScreen}  />
-        <Route path="/articles/:cat" component={ArticlesForm} />
+        <Route path="/nos-articles/:category" component={ArticlesScreeen} />
         
       </div>
     </BrowserRouter>

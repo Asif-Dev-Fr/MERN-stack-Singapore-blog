@@ -33,7 +33,7 @@ const HomeScreen = () => {
                     <div>
                         <h2>{value.name}</h2>
                         <p>{value.text}</p>
-                        <Link to={"/nos-articles/" + value.category.toLowerCase()}> {value.category} </Link>
+                        <Link to={"/nos-articles/" + value.category}> {value.category} </Link>
                     </div>   
                     
                 )
