@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './App.css';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 import NavbarTop from './Components/Navbar';
 import HomeScreen from './Screens/HomeScreen';
@@ -24,8 +24,8 @@ const App = () => {
     <BrowserRouter>
       <div className="container-fluid  p-0">
         <NavbarTop />
-        <HomeScreen />
-        <ArticlesForm />
+        <Route path='/' exact={true} component={HomeScreen}  />
+        <Route path="/articles/:cat" component={ArticlesForm} />
         
       </div>
     </BrowserRouter>

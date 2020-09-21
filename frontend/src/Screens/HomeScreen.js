@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { listArticles } from '../Action/articleActions';
-
+import { Link } from 'react-router-dom';
+ 
 const HomeScreen = () => {
 
     // const [articles, setArticles] = useState([]);
@@ -29,7 +30,12 @@ const HomeScreen = () => {
             <h1>HomeScreen Component</h1>
             {
                 articles.map(value => 
-                    <h2>{value.name}</h2>
+                    <div>
+                        <h2>{value.name}</h2>
+                        <p>{value.text}</p>
+                        <Link to={"/nos-articles/" + value.category.toLowerCase()}> {value.category} </Link>
+                    </div>   
+                    
                 )
             }
         </div>

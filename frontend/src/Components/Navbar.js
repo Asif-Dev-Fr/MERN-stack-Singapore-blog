@@ -17,10 +17,12 @@ const NavbarTop = () => {
        dispatch(listArticles());
     },[dispatch]);    
 
+    
+
     return (
         <Navbar bg="dark" variant="dark" expand="lg">
             <Navbar.Brand href="#home">
-            <Link className="navbar-brand" to="/"><img src={process.env.PUBLIC_URL + "/photo/Singapour_Expat_3.png"} alt="Singapour Expat" /></Link>
+                <Link className="navbar-brand" to="/"><img src={process.env.PUBLIC_URL + "/photo/Singapour_Expat_3.png"} alt="Singapour Expat" /></Link>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
@@ -32,7 +34,7 @@ const NavbarTop = () => {
                             loading ? <div>Loading...</div> :
                             error ? <div>{error}</div> :
                             articles.map(name => 
-                                <NavDropdown.Item href={name.category}>{name.category}</NavDropdown.Item>
+                                <NavDropdown.Item href={"/nos-articles/" + name.category.toLowerCase()}>{name.category}</NavDropdown.Item>
                             )
                         }                        
                     </NavDropdown>
