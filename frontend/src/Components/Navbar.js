@@ -33,8 +33,8 @@ const NavbarTop = () => {
                         {
                             loading ? <div>Loading...</div> :
                             error ? <div>{error}</div> :
-                            articles.map(name => 
-                                <NavDropdown.Item href={"/nos-articles/" + name.category.toLowerCase()}>{name.category}</NavDropdown.Item>
+                            articles.map(article => 
+                                <NavDropdown.Item key={article._id} href={"/nos-articles/" + article.category.replaceAll(' ', '-').toLowerCase()}>{article.category}</NavDropdown.Item>
                             )
                         }                        
                     </NavDropdown>

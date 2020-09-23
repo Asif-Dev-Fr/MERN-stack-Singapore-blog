@@ -11,7 +11,7 @@ const ArticlesScreeen = ({ match }) => {
           const response = await fetch("/api/nos-articles");
           const data = await response.json();
           // console.log(data);
-          const searchedByCat = data.find(value => value.category === match.params.category);
+          const searchedByCat = data.find(value => value.category.replaceAll(' ', '-').toLowerCase() === match.params.category);
           setArticle(searchedByCat);
         }
         fetchDataByCat();

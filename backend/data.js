@@ -44,16 +44,16 @@ const data = {
         },
         {
             _id: '007',
-            name: 'Fiscalité / Banques',
+            name: 'Fiscalité et Banques',
             image : '',
-            category: 'Fiscalité / Banques',
+            category: 'Fiscalité-Banques',
             text: 'Fiscalité / Banquesà Singapour ?'
         },
         {
             _id: '008',
-            name: 'Logement / Démenagement',
+            name: 'Logement et Démenagement',
             image : '',
-            category: 'Logement / Démenagement',
+            category: 'Logement et Démenagement',
             text: 'Logement / Démenagement à Singapour ?'
         },
         {
@@ -65,9 +65,9 @@ const data = {
         },
         {
             _id: '010',
-            name: 'Vie Partique',
+            name: 'Vie Pratique',
             image : '',
-            category: 'Vie Partique',
+            category: 'Vie Pratique',
             text: 'Vie Partique à Singapour ?'
         },
         {

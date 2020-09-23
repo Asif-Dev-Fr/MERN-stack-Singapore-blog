@@ -30,10 +30,10 @@ const HomeScreen = () => {
             <h1>HomeScreen Component</h1>
             {
                 articles.map(value => 
-                    <div>
+                    <div key={value._id}>
                         <h2>{value.name}</h2>
                         <p>{value.text}</p>
-                        <Link to={"/nos-articles/" + value.category}> {value.category} </Link>
+                        <Link to={"/nos-articles/" + value.category.replaceAll(' ', '-').toLowerCase()}> {value.category} </Link>
                     </div>   
                     
                 )
