@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
+import ArticleScreen from './ArticleScreen';
 
 const ArticlesScreeen = ({ match }) => {
     // console.log(match.params);
 
-    const [category, setCategory] = useState();
+    const [article, setArticle] = useState({});
     
     useEffect(() => {
         const fetchDataByCat = async () => {
@@ -11,23 +12,16 @@ const ArticlesScreeen = ({ match }) => {
           const data = await response.json();
           // console.log(data);
           const searchedByCat = data.find(value => value.category === match.params.category);
-          setCategory(searchedByCat);
+          setArticle(searchedByCat);
         }
         fetchDataByCat();
-    },[match.params.cat]);
+    },[match.params.category]);
 
-    console.log(category);
+    console.log(article);
     return(
         <div>
-            ArticlesScreeen !
-            <h1> {category.name} </h1> 
-
-            {/*
-                category.map((value) => 
-                    <h1>{ value.name }</h1>
-                )*/
-            }
-            
+            <h1>Articles Screeen !</h1>
+            <ArticleScreen article={article} />
         </div>
     )
 }
