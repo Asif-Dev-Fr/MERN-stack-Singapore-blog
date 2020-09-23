@@ -1,3 +1,14 @@
 .navbar-color {
   color: #FFF !important;
 }
+
+.container-fluid {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Carousel */
+
+
+.container-fluid #section_1 .carousel .carousel-inner .carousel-item img {
+  height: 470px
+}

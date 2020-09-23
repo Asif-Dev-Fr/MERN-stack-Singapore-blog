@@ -20,29 +20,31 @@ const NavbarTop = () => {
     
 
     return (
-        <Navbar bg="dark" variant="dark" expand="lg">
-            <Navbar.Brand href="#home">
-                <Link className="navbar-brand" to="/"><img src={process.env.PUBLIC_URL + "/photo/Singapour_Expat_3.png"} alt="Singapour Expat" /></Link>
-            </Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="mr-auto text-center navbar-color">
-                    <Link className="nav-link navbar-color" to="/"><i className="fas fa-home"></i> Accueil </Link>
-                    <Nav.Link className="navbar-color" href="./">Histoire</Nav.Link>
-                    <NavDropdown title="Nos articles" id="basic-nav-dropdown">
-                        {
-                            loading ? <div>Loading...</div> :
-                            error ? <div>{error}</div> :
-                            articles.map(article => 
-                                <NavDropdown.Item key={article._id} href={"/nos-articles/" + article.category.replaceAll(' ', '-').toLowerCase()}>{article.category}</NavDropdown.Item>
-                            )
-                        }                        
-                    </NavDropdown>
-                    <Nav.Link className="navbar-color" href="/contact">Contact</Nav.Link>
-                </Nav>
-                
-            </Navbar.Collapse>
-        </Navbar>
+        <header>
+            <Navbar bg="dark" variant="dark" expand="lg">
+                <Navbar.Brand href="#home">
+                    <Link className="navbar-brand" to="/"><img src={process.env.PUBLIC_URL + "/photo/Singapour_Expat_3.png"} alt="Singapour Expat" /></Link>
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="mr-auto text-center navbar-color">
+                        <Link className="nav-link navbar-color" to="/"><i className="fas fa-home"></i> Accueil </Link>
+                        <Nav.Link className="navbar-color" href="./">Histoire</Nav.Link>
+                        <NavDropdown title="Nos articles" id="basic-nav-dropdown">
+                            {
+                                loading ? <div>Loading...</div> :
+                                error ? <div>{error}</div> :
+                                articles.map(article => 
+                                    <NavDropdown.Item key={article._id} href={"/nos-articles/" + article.category.replaceAll(' ', '-').toLowerCase()}>{article.category}</NavDropdown.Item>
+                                )
+                            }                        
+                        </NavDropdown>
+                        <Nav.Link className="navbar-color" href="/contact">Contact</Nav.Link>
+                    </Nav>
+                    
+                </Navbar.Collapse>
+            </Navbar>
+        </header>
     )
 }
 

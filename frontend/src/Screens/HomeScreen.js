@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { listArticles } from '../Action/articleActions';
 import { Link } from 'react-router-dom';
  
+import Carousel from '../Components/Carousel';
+
 const HomeScreen = () => {
 
     // const [articles, setArticles] = useState([]);
@@ -27,7 +29,9 @@ const HomeScreen = () => {
         loading ? <div>Loading...</div> :
         error ? <div>{error}</div> :
         <div>
-            <h1>HomeScreen Component</h1>
+            <section id="section_1">
+                <Carousel />
+            </section>
             {
                 articles.map(value => 
                     <div key={value._id}>
