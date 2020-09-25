@@ -3,8 +3,13 @@ import { Link } from 'react-router-dom';
 
 import { Navbar, NavDropdown, Nav } from 'react-bootstrap';
 
+// Redux pour avoir tous les articles :
 import { useSelector, useDispatch } from 'react-redux';
-import { listArticles } from '../Action/articleActions';
+import { listArticles, histoireArticle } from '../Action/articleActions';
+
+// Utiliser pour aller dans les articles par catégories :
+import ArticlesScreeen from '../Screens/ArticlesScreen';
+import { Route } from 'react-router-dom';
 
 
 const NavbarTop = () => {
@@ -22,14 +27,12 @@ const NavbarTop = () => {
     return (
         <header>
             <Navbar bg="dark" variant="dark" expand="lg">
-                <Navbar.Brand href="#home">
-                    <Link className="navbar-brand" to="/"><img src={process.env.PUBLIC_URL + "/photo/Singapour_Expat_3.png"} alt="Singapour Expat" /></Link>
-                </Navbar.Brand>
+                <Navbar.Brand href="/"><img src={process.env.PUBLIC_URL + "/photo/Singapour_Expat_3.png"} alt="Singapour Expat" /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto text-center navbar-color">
-                        <Link className="nav-link navbar-color" to="/"><i className="fas fa-home"></i> Accueil </Link>
-                        <Nav.Link className="navbar-color" href="./">Histoire</Nav.Link>
+                        <Link className="nav-link navbar-color" to="/"><i className="fas fa-home"></i> Accueil </Link>                                
+                        <Nav.Link className="navbar-color" href="/nos-articles/">Histoire</Nav.Link>   
                         <NavDropdown title="Nos articles" id="basic-nav-dropdown">
                             {
                                 loading ? <div>Loading...</div> :
@@ -44,6 +47,7 @@ const NavbarTop = () => {
                     
                 </Navbar.Collapse>
             </Navbar>
+            <Route path="/nos-articles/:category" component={ArticlesScreeen} />
         </header>
     )
 }

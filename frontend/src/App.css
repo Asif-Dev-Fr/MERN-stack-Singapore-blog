@@ -1,9 +1,21 @@
-.navbar-color {
+/* Container*/
+.container-fluid {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Header */
+
+
+
+/* Navbar */
+
+
+nav .collapse .navbar-color {
   color: #FFF !important;
 }
 
-.container-fluid {
-  font-family: 'Roboto', sans-serif;
+nav .collapse .navbar-color .dropdown #basic-nav-dropdown {
+  color: #FFF !important;
 }
 
 /* Carousel */

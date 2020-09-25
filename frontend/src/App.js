@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-import NavbarTop from './Components/Navbar';
+import NavbarTop from './Components/NavbarTop';
 import HomeScreen from './Screens/HomeScreen';
 import ArticlesForm from './forms/articlesForm';
 import ArticlesScreeen from './Screens/ArticlesScreen';
@@ -26,7 +26,7 @@ const App = () => {
       <div className="container-fluid  p-0">
         <NavbarTop />
         <Route path='/' exact={true} component={HomeScreen}  />
-        <Route path="/nos-articles/:category" component={ArticlesScreeen} />
+        
         
       </div>
     </BrowserRouter>

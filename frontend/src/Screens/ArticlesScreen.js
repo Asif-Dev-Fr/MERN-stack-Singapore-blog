@@ -17,7 +17,7 @@ const ArticlesScreeen = ({ match }) => {
         fetchDataByCat();
     },[match.params.category]);
 
-    console.log(article);
+    // console.log(article);
     return(
         <div>
             <h1>Articles Screeen !</h1>
