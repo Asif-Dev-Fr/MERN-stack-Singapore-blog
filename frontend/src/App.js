@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom';
 
@@ -7,18 +7,27 @@ import HomeScreen from './Screens/HomeScreen';
 import ArticlesForm from './forms/articlesForm';
 import ArticlesScreeen from './Screens/ArticlesScreen';
 
+// Redux : 
+import { useSelector, useDispatch } from 'react-redux';
+import { listArticles } from './Action/articleActions';
+
+
+
 const App = () => {
 
   // Retrieve data :
-  /*
+  
   useEffect(() => {
-    const fetchData = async (articleId) => {
+    /*
+      // Sans redux : 
+      const fetchData = async (articleId) => {
       const response = await fetch("/nos-articles");
       const data = await response.json();
       console.log(data);
     }
     fetchData();
-  },[]); */
+    */
+  },[]); 
 
 
   return (

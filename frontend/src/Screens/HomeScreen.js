@@ -7,21 +7,12 @@ import Carousel from '../Components/Carousel';
 
 const HomeScreen = () => {
 
-    // const [articles, setArticles] = useState([]);
     const articleList = useSelector(state => state.articleList);
     const { articles, loading, error } = articleList;
     const dispatch = useDispatch();
 
     // Retrieve data :
     useEffect(() => {
-        /*
-        const fetchData = async () => {
-            const response = await fetch("/api/nos-articles");
-            const data = await response.json();
-            console.log(data);
-        }
-        fetchData();
-        */
        dispatch(listArticles());
     },[dispatch]);
 
