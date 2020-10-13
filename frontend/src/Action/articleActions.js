@@ -11,7 +11,7 @@ const listArticles = () => async (dispatch) => {
         dispatch({type: ARTICLE_LIST_FAIL, payload: error.message});
     }
 } 
-
+/*
 const histoireArticle = () => async (dispatch) => {
     try {
         dispatch({type: ARTICLE_LIST_REQUEST});
@@ -22,6 +22,6 @@ const histoireArticle = () => async (dispatch) => {
     } catch(error) {
         dispatch({type: ARTICLE_LIST_FAIL, payload: error.message});
     }
-} 
+} */
 
-export { listArticles,  histoireArticle };
+export { listArticles /*,  histoireArticle */ };

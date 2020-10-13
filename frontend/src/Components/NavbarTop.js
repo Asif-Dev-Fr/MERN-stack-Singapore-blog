@@ -32,7 +32,7 @@ const NavbarTop = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto text-center navbar-color">
                         <Link className="nav-link navbar-color" to="/"><i className="fas fa-home"></i> Accueil </Link>                                
-                        <Nav.Link className="navbar-color" href="/nos-articles/">Histoire</Nav.Link>   
+                        <Nav.Link className="navbar-color" href="/nos-articles/histoire">Histoire</Nav.Link>   
                         <NavDropdown title="Nos articles" id="basic-nav-dropdown">
                             {
                                 loading ? <div>Loading...</div> :

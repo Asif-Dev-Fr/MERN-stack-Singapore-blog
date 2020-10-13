@@ -6,7 +6,7 @@ import NavbarTop from './Components/NavbarTop';
 import HomeScreen from './Screens/HomeScreen';
 import ArticlesForm from './forms/articlesForm';
 import ArticlesScreeen from './Screens/ArticlesScreen';
-import Contact from './Components/Contact';
+import ContactScreen from './Screens/ContactScreen';
 
 // Redux : 
 import { useSelector, useDispatch } from 'react-redux';
@@ -33,11 +33,11 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <div className="container-fluid  p-0">
+      <div className="container-fluid p-0">
         <NavbarTop />
         <Route path='/' exact={true} component={HomeScreen}  />
 
-        <Route path='/contact' component={Contact} />
+        <Route path='/contact' component={ContactScreen} />
         
         
       </div>

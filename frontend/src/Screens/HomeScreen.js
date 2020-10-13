@@ -16,6 +16,7 @@ const HomeScreen = () => {
        dispatch(listArticles());
     },[dispatch]);
 
+
     return(
         loading ? <div>Loading...</div> :
         error ? <div>{error}</div> :
@@ -24,15 +25,32 @@ const HomeScreen = () => {
                 <Carousel />
             </section>
             {
+                
                 articles.map(value => 
+                    value.category === 'Visa' ?
                     <div key={value._id}>
                         <h2>{value.name}</h2>
                         <p>{value.text}</p>
                         <Link to={"/nos-articles/" + value.category.replaceAll(' ', '-').toLowerCase()}> {value.category} </Link>
-                    </div>   
-                    
+                    </div>  : ' ',
+                        
+                )
+
+                
+            }
+
+            {
+                articles.map(value => 
+                    value.category === 'Travail' ?
+                    <div key={value._id}>
+                        <h2>{value.name}</h2>
+                        <p>{value.text}</p>
+                        <Link to={"/nos-articles/" + value.category.replaceAll(' ', '-').toLowerCase()}> {value.category} </Link>
+                    </div>  : ' ',
+                        
                 )
             }
+
         </div>
     )
 }
