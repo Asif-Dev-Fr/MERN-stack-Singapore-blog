@@ -3,6 +3,11 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.center {
+  width: 80%;
+  margin: 0 auto;
+}
+
 /* Header */
 
 
@@ -24,3 +29,24 @@ nav .collapse .navbar-color .dropdown #basic-nav-dropdown {
 .container-fluid #section_1 .carousel .carousel-inner .carousel-item img {
   height: 470px
 }
+
+
+/* Page Contact */
+.contact {
+  margin-top: 40px;
+  min-height: 500px;
+}
+
+.contactSubmitButton {
+  margin: 0 auto;
+}
+
+.messageContact {
+  height: 250px !important;
+}
+
+.buttonRed {
+  background-color : #FF2C3C;
+  color: white;
+}
+/* Fin page Contact */
