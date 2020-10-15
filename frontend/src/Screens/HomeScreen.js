@@ -51,6 +51,20 @@ const HomeScreen = () => {
                 )
             }
 
+            {
+                articles.map(value => 
+                    value.category === 'Logement et Démenagement' ?
+                    <div key={value._id}>
+                        <h2>{value.name}</h2>
+                        <p>{value.text}</p>
+                        <Link to={"/nos-articles/" + value.category.replaceAll(' ', '-').toLowerCase()}> {value.category} </Link>
+                    </div>  : ' ',
+                        
+                )
+            }
+
+
+
         </div>
     )
 }
